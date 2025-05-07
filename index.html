@@ -3,90 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wicked Input Cards</title>
+  <title>Summer Input Cards</title>
   <style>
     body {
-      background-color: #1b1f1f;
-      color: #e0ffe0;
+      background: linear-gradient(to bottom, #fffae3, #ffe4b3);
+      color: #333;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 2rem;
+      min-height: 100vh;
     }
     h1 {
-      color: #76ff76;
-      margin-bottom: 1rem;
+      color: #ff7f50;
+      text-align: center;
+      margin: 1rem 0;
     }
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: #2a2f2f;
+      background: #fff8dc;
       padding: 1rem 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px #00ff00aa;
-      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin: 1rem auto;
+      max-width: 500px;
+      width: 90%;
     }
     input[type="text"] {
       padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 2px solid #76ff76;
+      margin: 0.5rem 0;
+      border: 1px solid #ffb347;
       border-radius: 5px;
-      background-color: #333;
-      color: #e0ffe0;
-      width: 200px;
+      background-color: #fff;
+      width: 100%;
     }
     button {
-      background-color: #76ff76;
+      background-color: #ffa500;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      margin-top: 0.5rem;
+      color: #fff;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fefbd8;
+      padding: 1rem;
     }
     .cards {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
+      width: 100%;
+      max-width: 1200px;
     }
     .card {
-      background-color: #2a2f2f;
-      border: 2px solid #00ff00aa;
+      background-color: #fff8dc;
+      border: 2px solid #ffd700;
       border-radius: 10px;
       padding: 1rem;
-      box-shadow: 0 0 10px #00ff00aa;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       min-width: 200px;
       max-width: 300px;
-      color: #e0ffe0;
+    }
+    .card strong {
+      color: #ff7f50;
     }
   </style>
 </head>
 <body>
-  <h1>Wicked Inputs</h1>
+  <h1>☀️ ELI-21 Technical Concept Board ☀️</h1>
   <form id="inputForm">
-    <input type="text" id="fieldOne" placeholder="Wicked thought #1" required />
-    <input type="text" id="fieldTwo" placeholder="Wicked thought #2" required />
-    <button type="submit">Submit</button>
+    <input type="text" id="nameField" placeholder="Your name (optional)" />
+    <input type="text" id="fieldOne" placeholder="Technical Concept" required />
+    <input type="text" id="fieldTwo" placeholder="ELI-21 Explanation" required />
+    <button type="submit">Share</button>
   </form>
-  <div class="cards" id="cardContainer"></div>
+  <div class="content">
+    <h2>ELI-21 Tehnical Questions</h2>
+    <div class="cards" id="cardContainer"></div>
+  </div>
 
   <script>
     const form = document.getElementById('inputForm');
+    const nameField = document.getElementById('nameField');
     const fieldOne = document.getElementById('fieldOne');
     const fieldTwo = document.getElementById('fieldTwo');
     const container = document.getElementById('cardContainer');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      const name = nameField.value.trim();
       const value1 = fieldOne.value.trim();
       const value2 = fieldTwo.value.trim();
       if (value1 !== '' && value2 !== '') {
         const card = document.createElement('div');
         card.className = 'card';
-        card.innerHTML = `<strong>Thought #1:</strong> ${value1}<br><strong>Thought #2:</strong> ${value2}`;
+        card.innerHTML =
+          (name ? `<strong>${name}</strong><br>` : '') +
+          `<strong>Memory:</strong> ${value1}<br><strong>Treat:</strong> ${value2}`;
         container.appendChild(card);
+        nameField.value = '';
         fieldOne.value = '';
         fieldTwo.value = '';
       }
@@ -94,3 +121,4 @@
   </script>
 </body>
 </html>
+
