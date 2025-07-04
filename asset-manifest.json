@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/eli-21/static/css/main.f855e6bc.css",
+    "main.js": "/eli-21/static/js/main.e8823d71.js",
+    "static/js/453.a038ad26.chunk.js": "/eli-21/static/js/453.a038ad26.chunk.js",
+    "static/media/logo.svg": "/eli-21/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/eli-21/index.html",
+    "main.f855e6bc.css.map": "/eli-21/static/css/main.f855e6bc.css.map",
+    "main.e8823d71.js.map": "/eli-21/static/js/main.e8823d71.js.map",
+    "453.a038ad26.chunk.js.map": "/eli-21/static/js/453.a038ad26.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.e8823d71.js"
+  ]
+}
